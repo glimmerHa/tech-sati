@@ -71,61 +71,39 @@ function computedImage (ruleObj, imageData) {
 }
 var $topicItem = $('<div class="topic-item"></div>')
 var image = {
-    // "url":"http://indivi-cdn.shouji.sogou.com/wapdl/static/daodao/201910/24/31a.jpg",
-    // "height":426,
-    // "width":440
-    // "url":"http://indivi-cdn.shouji.sogou.com/wapdl/static/daodao/201910/24/73a.png",
-    // "height":411,
-    // "width":427
-    // "url":"http://indivi-cdn.shouji.sogou.com/wapdl/static/daodao/201910/24/89a.jpg",
-    // "height":211,
-    // "width":202
-    // "url":"http://indivi-cdn.shouji.sogou.com/wapdl/static/daodao/201910/24/82a.png",
-    // "height":736,
-    // "width":423
-    // "url":"http://indivi-cdn.shouji.sogou.com/wapdl/hole/201910/30/2019103010234079546246.jpg",
-    // "height":631,
-    // "width":569
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/logo.png',
-    // width: 200,
-    // height: 200
-    
     // 横图
-    url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/hengtu01.png',
+    url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/hengtu01.png',
     width: 1000,
     height: 360
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/hengtu02.png',
+    // url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/hengtu02.png',
     // width: 398,
     // height: 358
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/hengtu03.png',
+    // url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/hengtu03.png',
     // width: 1040,
     // height: 780
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/hengtu05.png',
+    // url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/hengtu05.png',
     // width: 1100,
     // height: 800
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/hengtu06.png',
+    // url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/hengtu06.png',
     // width: 880,
     // height: 800
     
     // 竖图
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/shutu01.png',
+    // url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/shutu01.png',
     // width: 362,
     // height: 992
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/shutu02.png',
+    // url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/shutu02.png',
     // width: 358,
     // height: 398
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/shutu03.png',
+    // url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/shutu03.png',
     // width: 780,
     // height: 1040
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/shutu05.png',
+    // url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/shutu05.png',
     // width: 800,
     // height: 1100
-    // url:'https://raw.githubusercontent.com/glimmerHa/echarts-demo/master/src/assets/shutu06.png',
+    // url:'https://raw.githubusercontent.com/glimmerHa/tech-sati/master/prac_exp/deal_pic/assets/image/shutu06.png',
     // width: 800,
     // height: 880
-    // "url":"http://indivi-cdn.shouji.sogou.com/wapdl/hole/201912/09/2019120914575432634408.jpg",
-    // "height":552,
-    // "width":368
 }
 var $detailTie = ''
 var $topicItem1 = $topicItem.clone(true)
