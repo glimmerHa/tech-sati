@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自适应内部元素</title>
+    <style>
+        figure{
+            border:1px solid #f5f5f5
+        }
+    </style>
+</head>
+<body>
+    <p>不给元素指定一个具体的高度height，它自己就会自动适应其内容高度</p>
+    <p>加入，我们希望宽度 width 也有这种能力，应该怎么办呢？</p>
+    <h5>举例</h5>
+    <div class="demo">
+        <p>这是举例的第一行</p>
+        <figure>
+            <img src="./demo.png" alt="">
+            <figcaption>Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.</figcaption>
+        </figure>
+        <p>举例最后一行</p>
+    </div>
+    <div class="sp">
+        <h3>专业名词区域：</h3>
+        <h6>css的副作用</h6>
+        <h6>css的副作用可以实现 一些 宽度控制</h6>
+    </div>
+    <p>希望 figure 元素 能和它所包含的图片一样宽，而且是水平居中的。</p>
+    <h3>问题一： <span>如果让figure 的宽度由它内部的图片来决定，而不是由它的父元素来决定呢？</span></h3>
+    <h3>尝试1： 使用浮动解决问题。 <span></span></h3>
+    <div class="demo">
+        <p>这是举例的第一行</p>
+        <figure style="float: left;">
+            <img src="./demo.png" alt="">
+            <figcaption>Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.</figcaption>
+        </figure>
+        <p>举例最后一行</p>
+    </div>
+    <h3>尝试2： 使用display:inline-block。 <span></span></h3>
+    <div class="demo">
+        <p>这是举例的第一行</p>
+        <figure style="display:inline-block">
+            <img src="./demo.png" alt="">
+            <figcaption>Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.</figcaption>
+        </figure>
+        <p>举例最后一行</p>
+    </div>
+
+    <h2>解决方案： css内部与外部尺寸模型第三版 <span>是比较新的一套规范，带来了 min-content</span></h2>
+    <div class="demo">
+        <p>这是举例的第一行</p>
+        <figure style="width:min-content; margin:auto;">
+            <img src="./demo.png" alt="">
+            <figcaption>Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.</figcaption>
+        </figure>
+        <p>举例最后一行</p>
+    </div>
+    <pre>
+        1. 可以实现的css代码是：
+        <code>
+            figure{
+                width:min-content;
+                margin:auto;
+            }
+        </code>
+    </pre>
+    <div class="demo">
+        <p>这是举例的第一行</p>
+        <figure style="max-width:300px;max-width:min-content; margin:auto;">
+            <img style="max-width:inherit;" src="./demo.png" alt="">
+            <figcaption>Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.Fig.1 - Trulli, Puglia, Italy.</figcaption>
+        </figure>
+        <p>举例最后一行</p>
+    </div>
+    <pre>
+        2. 兼容旧版本浏览器，需要提供一个平稳的回退样式
+        <code>
+            figure{
+                max-width:300px;
+                max-width:min-content;
+                margin:auto;
+            }
+            figure >img{
+                max-width:inherit;
+            }
+        </code>
+    </pre>
+
+</body>
+</html>
