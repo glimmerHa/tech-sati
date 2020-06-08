@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垂直居中</title>
+    <style>
+        .demo1{
+            background-color: rgba(255,0,0,0.4);
+        }
+        .demo2{
+            background-color: rgba(255,255,0,0.4);
+        }
+        .demo3{
+            background-color: rgba(0,255,0,0.4);
+        }
+        body{
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .toast{
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            text-align: center;
+            background-color: rgba(0,0,0,0.5);
+            z-index:100;
+            
+        }
+        .toast-wei{
+            /* display: flex; */
+            display: none;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .toast-wei-body{
+            margin:auto;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #ebeef5;
+        }
+        .toast-flex::after{
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 0;
+            vertical-align: middle;
+        }
+        .toast-body{
+            display: inline-block;
+            vertical-align: middle;
+            
+            width: 420px;
+            padding-bottom: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #ebeef5;
+            font-size: 18px;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+            text-align: left;
+            overflow: hidden;
+            backface-visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <section style="display: none;">
+        <pre>引言</pre>
+        <p>css 对元素进行 <b>水平居中</b> 是非常简单的<br>
+            <ul>
+                <li><span>如果元素是一个行内元素，对它的父元素应用 <code>text-align:center</code></span></li>
+                <li><span>如果元素是一个块元素，对它本身应用 <code>margin:auto;</code></span></li>
+            </ul>
+            <big>如果要对一个元素进行 <b>垂直居中</b> 呢？</big>
+        </p>
+    </section>
+    <section style="display: none;">
+        <h3>示例1:基于 绝对定位的解决方案；要求元素具有固定的宽度和高度</h3>
+        <main class="demo1" style="position: absolute;top:50%;left:50%;margin-top:-3em;margin-left:-9em;width:18em;height:6em">
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+        </main>
+        <pre><b>说一说本质</b></pre>
+        <ol>
+            <li>先把这个元素的左上角放置在视口(有定位的 相关的祖先元素 or body)的正中心</li>
+            <li>利用 负外边距 把它 向左 向上移动(自身宽高的一半)，把元素的 正中心放置在 视口的正中心。</li>
+            <li>还可以借用calc() 函数，再精简代码</li>
+        </ol>
+
+        <h3>示例2：基于绝对定位 和 calc()</h3>
+        <main class="demo2" style="position: absolute;top:calc(50% - 3em);left:calc(50% - 9em);width:18em;height:6em">
+            <h1>第二个实例：示例第一句话</h1>
+            <p>第二个实例：示例第二句话</p>
+        </main>
+
+        <b>缺陷</b>
+        <ol>
+            <li>局限：要求元素的宽高固定</li>
+            <li>大多需求：一般dom尺寸 是由 里面的内容决定的</li>
+            <li>开发需求: 找到一个属性的百分比值 以元素自身的宽高作为解析基准；但大多数 css属性(包括 margin) 百分比都是以父元素的尺寸为基准进行解析的</li>
+        </ol>
+    </section>
+    <section style="display: none;">
+        <p>找到的解决方案：css的变形属性 <code>translate()</code>; 它使用百分比时，是以这个元素自身的宽度和高度为基准 进行换算和移动的</p>
+        <h3>示例3：基于绝对定位 和 css变形属性</h3>
+        <main class="demo3" style="position: absolute;top:50%;left:50%;transform: translate(-50%, -50%);;">
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <!-- <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p> -->
+        </main>
+
+    </section>
+    <section style="display: none;">
+        <h2>以上都是 基于 绝对定位</h2>
+        <ol>
+            <li>有时候不能选择绝对定位；对整个布局影响太大</li>
+            <li>如果需要居中的元素 已经超过视口高度；那它顶部会被视口剪裁调；</li>
+            <li><b>transform-style:preserve-3d</b> 可以修复一些 模糊，放在半个像素上的问题</li>
+        </ol>
+    </section>
+    <section style="display: none;">
+        <h3>示例4：基于视口单位的解决方案；+translate</h3>
+        <main class="demo4" style="width:18em;padding:1em 1.5em;margin:50% auto 0;transform:translateY(-50%);">
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+        </main>
+        <ol>
+            <li>会产生错乱：margin 的百分比值 是以父元素的宽度 作为解析基准的</li>
+            <li>幸运的是，如果只是想把元素相对于视口居中；可以使用视口相关单位</li>
+            <li>vh vw</li>
+        </ol>
+        <h3>示例5：vw vh</h3>
+        <main class="demo5" style="width:18em;padding:1em 1.5em;margin:50vh auto 0;transform:translateY(-50%);">
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+        </main>
+        <ol>
+            <li>有限的使用场景：只适用于 视口居中场景</li>
+        </ol>
+    </section>
+    <section style="display: none;">
+        <h3>示例6： 基于flexbox 的解决方案</h3>
+        <code>
+            body{
+                display: flex;
+                min-height: 100vh;
+                margin: 0;
+            }
+            main{
+                margin:auto
+            }
+        </code>
+        <code>
+            main{
+                display:flex;
+            }
+        </code>
+        <main class="demo6" style="margin:auto">
+            <h1>第一个实例：示例第一句话</h1>
+            <p>第一个实例：示例第二句话</p>
+        </main>
+        <p>内部文案 垂直居中</p>
+        <main style="display: flex;align-items: center; justify-content: center;width:18em;height:10em;">示例最终</main>
+    </section>
+    <section>
+        <h4>场景：弹窗toast 垂直居中</h4>
+        <button id="flexbtn">flex布局居中</button>
+        <button id="weibtn">伪类元素居中</button>
+
+        <main id="flexdiv" class="toast toast-flex">
+            <div class="toast-body">
+                一行文字
+            </div>
+        </main>
+        <main id="weidiv" class="toast toast-wei">
+            <div class="toast-wei-body">
+                一行文字
+            </div>
+        </main>
+    </section>
+</body>
+</html>
