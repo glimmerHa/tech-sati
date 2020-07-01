@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航高亮</title>
+    <style>
+        .nav-wrapper{
+            background-color: black;
+            color:#fff;
+
+            display: flex;
+            height:60px;
+            line-height: 60px;
+        }
+        .nav-item {
+            flex:1;
+            text-align: center;
+            opacity: 0.5;
+        }
+        .nav-item:hover{
+            opacity: 1;
+        }
+        a{
+            text-decoration: none;
+            color:#fff;
+        }
+        body.home .nav-wrapper .nav-home,
+        body.blogs .nav-wrapper .nav-blogs,
+        body.github .nav-wrapper .nav-github{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="github">
+    <main>
+        <div class="nav-wrapper">
+            <div class="nav-item nav-home">
+                <a href="./home.html">HOME</a>
+            </div>
+            <div class="nav-item nav-blogs">
+                <a href="./blogs.html">BLOGS</a>
+            </div>
+            <div class="nav-item nav-github">
+                <a href="./github.html">GITHUB</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

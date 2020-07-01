@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标悬浮时显示</title>
+    <style>
+        .nav-wrapper{
+            background-color: black;
+            color:#fff;
+
+            display: flex;
+            height:60px;
+            line-height: 60px;
+        }
+        .nav-item {
+            flex:1;
+            text-align: center;
+            opacity: 0.5;
+            position: relative;
+        }
+        .nav-item:hover{
+            opacity: 1;
+        }
+        a{
+            text-decoration: none;
+            color:#fff;
+        }
+        body.home .nav-wrapper .nav-home,
+        body.blogs .nav-wrapper .nav-blogs,
+        body.github .nav-wrapper .nav-github{
+            opacity: 1;
+        }
+        .menu{
+            background-color: #888;
+            display: none;
+            position: absolute;
+            width:100%;
+            top:64px;
+        }
+        .menu::before{
+            content:'';
+            position: absolute;
+            left:0;
+            top:-20px;
+            width:100%;
+            height:20px;
+        }
+        .nav:hover + .menu{
+            display: block;
+        }
+        .menu:hover{
+            display: block;
+        }
+        .nav-item-child{
+            flex:1;
+            text-align: center;
+            opacity: 0.5;
+            position: relative;
+        }
+        .nav-item-child:hover{
+            opacity: 1;
+        }
+        .child-menu{
+            background-color: #888;
+            display: none;
+            position: absolute;
+            width:100%;
+            top:64px;
+        }
+        .child-menu::before{
+            content:'';
+            position: absolute;
+            left:0;
+            top:-20px;
+            width:100%;
+            height:20px;
+        }
+        .nav-item-child:hover  .child-menu{
+            display: block;
+        }
+    </style>
+</head>
+<body class="home">
+    <main>
+        <div class="nav-wrapper">
+            <div class="nav-item nav-home">
+                <div class="nav">
+                    <a href="./home.html">HOME</a>
+                </div>
+                <div class="menu">
+                    <div>like</div>
+                    <div>comment</div>
+                </div>
+            </div>
+            <div class="nav-item nav-blogs">
+                <div class="nav">
+                    <a href="./blogs.html">BLOGS</a>
+                </div>
+                <div class="menu">
+                    <div>like</div>
+                    <div>comment</div>
+                </div>
+                
+            </div>
+            <div class="nav-item nav-github">
+                <div class="nav">
+                    <a href="./github.html">GITHUB</a>
+                </div>
+                <div class="menu">
+                    <div>like</div>
+                    <div>comment</div>
+                </div>
+            </div>
+        </div>
+        <div style='height:200px;'></div>
+        <div class="nav-wrapper">
+            <div class="nav-item-child nav-home">
+                <a href="./home.html">HOME</a>
+                <div class="child-menu">
+                    <div>like</div>
+                    <div>comment</div>
+                </div>
+            </div>
+            <div class="nav-item-child nav-blogs">
+                <a href="./blogs.html">BLOGS</a>
+                <div class="child-menu">
+                    <div>like</div>
+                    <div>comment</div>
+                </div>
+                
+            </div>
+            <div class="nav-item-child nav-github">
+                <a href="./github.html">GITHUB</a>
+                <div class="child-menu">
+                    <div>like</div>
+                    <div>comment</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>能用HTML/CSS解决的问题就不要用JS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        body{
+            display: flex;
+            flex-flow: column;
+            min-height:100vh;
+        }
+        main{
+            flex:1;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="./demo1/home.html">导航高亮</a>
+            </li>
+            <li class="list-group-item">
+                <a href="./demo1/mouse.html">鼠标悬浮时显示</a>
+            </li>
+            <li class="list-group-item">
+                <a href="./demo1/radio.html">自定义radio/checkbox的样式</a>
+            </li>
+            <li class="list-group-item">
+                <a href="./demo1/equheight.html">多列等高</a>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <div class="jumbotron">
+            <span class="label label-danger">诉求</span>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-success">多面板 切换</a>
+                <a href="#" class="list-group-item list-group-item-info">Cras sit amet nibh libero</a>
+                <a href="#" class="list-group-item list-group-item-warning">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

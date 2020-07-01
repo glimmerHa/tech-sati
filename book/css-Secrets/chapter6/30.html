@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩大可点击区域</title>
+    <style>
+        body{
+            min-height:100vh;
+            background-color: #000;
+        }
+        button{
+            padding:0;
+            border-color: transparent;
+            background-color: transparent;
+
+            color:#fff;
+            position: relative;
+        }
+        .yl-btn::before{
+            content: '';
+            position: absolute;
+            left:-10px;
+            right:-10px;
+            top:-10px;
+            bottom:-10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="yl-btn">
+            <div>
+                <img src="//img01.sogoucdn.com/app/a/200678/3287c013f1c52c0929e42d7e7923d2f3.png" alt="">
+            </div>
+            <div>点赞</div>
+        </button>
+    </div>
+</body>
+</html>
